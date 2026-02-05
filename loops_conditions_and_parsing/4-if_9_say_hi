@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+i=1
+
+# Bash uses 'do' to start the loop
+while [ $i -le 10 ]; do
+    
+    # 'then' is mandatory after an if condition
+    if [ $i -eq 9 ]; then
+        echo "Best School"
+        echo "Hi"
+    else
+        echo "Best School"
+    fi # 'fi' is 'if' backwards, used to close the block
+
+    # Incrementing i
+    ((i++))
+
+done # 'done' closes the while loop
