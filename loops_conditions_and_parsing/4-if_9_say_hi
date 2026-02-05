@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-
+#comment
 i=1
-
-# Bash uses 'do' to start the loop
 while [ $i -le 10 ]; do
     
     # 'then' is mandatory after an if condition
@@ -16,4 +14,4 @@ while [ $i -le 10 ]; do
     # Incrementing i
     ((i++))
 
-done # 'done' closes the while loop
+done
