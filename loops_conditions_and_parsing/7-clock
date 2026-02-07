@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-# Display time from 0:1 to 12:59 using while loops
+# Display time from 0:1 to 12:59 using while loops, formatted as expected
 
 hour=0
 
 while [ $hour -le 12 ]; do
+    echo "Hour: $hour"
     minute=1
     while [ $minute -le 59 ]; do
-        echo "$hour:$minute"
+        echo "$minute"
         ((minute++))
     done
     ((hour++))
