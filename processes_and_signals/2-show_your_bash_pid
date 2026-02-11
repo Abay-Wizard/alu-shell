@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this is without pgrep
+ps -ef --forest | grep bash
