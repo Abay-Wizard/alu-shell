@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#this is 11-manage
+pidfile="/var/run/my_process.pid"
+process="./manage_my_process"
+
+case "$1" in
+    start)
+        sudo "$process" &
+        echo $! | sudo tee "$pidfile" > /dev/null
+        echo "manage_my_process started"
+        ;;
+    stop)
+        if [ -f "$pidfile" ]; then
+            sudo kill "$(cat "$pidfile")"
+            sudo rm -f "$pidfile"
+        fi
+        echo "manage_my_process stopped"
+        ;;
+    restart)
+        if [ -f "$pidfile" ]; then
+            sudo kill "$(cat "$pidfile")"
+            sudo rm -f "$pidfile"
+        fi
+        sudo "$process" &
+        echo $! | sudo tee "$pidfile" > /dev/null
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac
+
